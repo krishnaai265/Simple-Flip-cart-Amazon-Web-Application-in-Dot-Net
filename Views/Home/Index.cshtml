@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <link rel="stylesheet" href="~/Content/Carasole.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/NavBar.css" />
+</head>
+<body>
+    <!--
+       <button type="button" class="btn btn-sm btn-outline-secondary">@Html.ActionLink("Registration", "Registration")</button>
+       <button type="button" class="btn btn-sm btn-outline-secondary">@Html.ActionLink("Login", "Login")</button>
+    -->
+    <div>
+        <ul id="topnavbar">
+            <li class="topnavbarlist"><a href="#home">Home</a></li>
+            <li class="topnavbarlist"><a href="#news">News</a></li>
+            <li class="topnavbarlist"><a href="#contact">Contact</a></li>
+            <li class="topnavbarlist" style="float:right"><a href="#about">Register</a></li>
+            <li class="topnavbarlist" style="float:right"><a href="@Url.Action("Login","Products")">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides1">
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h55/he4/13355735646238" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/hd0/h76/13340185821214" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h3a/h30/13070312439838" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h5b/h31/13173804630046" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="https://sslimages.shoppersstop.com/sys-master/root/h4b/hcb/13292774522910" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+    <div class="middle1" style="margin-top:40px">
+        <img src="https://i.ibb.co/kgHbs2b/middle1.png" style="width:100%">
+    </div>
+    <div class="middle1" style="margin-left:45px; margin-top:50px;">
+        <img src="https://i.ibb.co/grx3kwx/Screenshot-2-1.png" />
+        <img src="https://i.ibb.co/SVstPrg/Screenshot-3-2.png" />
+        <img src="https://i.ibb.co/q72HvGB/Screenshot-2-3.png" />
+        <img src="https://i.ibb.co/nMmPdYw/Screenshot-3-4.png" />
+    </div>
+    <div class="middle1" style="margin-left:80px; margin-top:50px;">
+        <img src="https://sslimages.shoppersstop.com/sys-master/root/h64/h82/13302803857438" />
+    </div>
+    <div class="middle1" style="margin-top:50px;">
+        <img src="https://i.ibb.co/g7PXTSC/lower1.png" />
+    </div>
+
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+                <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Cool stuff</a></li>
+                    <li><a class="text-muted" href="#">Random feature</a></li>
+                    <li><a class="text-muted" href="#">Team feature</a></li>
+                    <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                    <li><a class="text-muted" href="#">Another one</a></li>
+                    <li><a class="text-muted" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Resource</a></li>
+                    <li><a class="text-muted" href="#">Resource name</a></li>
+                    <li><a class="text-muted" href="#">Another resource</a></li>
+                    <li><a class="text-muted" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Business</a></li>
+                    <li><a class="text-muted" href="#">Education</a></li>
+                    <li><a class="text-muted" href="#">Government</a></li>
+                    <li><a class="text-muted" href="#">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Team</a></li>
+                    <li><a class="text-muted" href="#">Locations</a></li>
+                    <li><a class="text-muted" href="#">Privacy</a></li>
+                    <li><a class="text-muted" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+  
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    var slideIndex = [1, 1];
+    var slideId = ["mySlides1", "mySlides2"]
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+        var i;
+        var x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) { slideIndex[no] = 1 }
+        if (n < 1) { slideIndex[no] = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex[no] - 1].style.display = "block";
+    }
+</script>
+</html>

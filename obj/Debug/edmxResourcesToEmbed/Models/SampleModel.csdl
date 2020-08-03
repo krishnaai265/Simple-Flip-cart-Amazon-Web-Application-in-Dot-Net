@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SopraDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandId" />
+    </Key>
+    <Property Name="BrandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BrandAddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Brands_BrandId" FromRole="Brands" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryAddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryId" FromRole="Categories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductPrice" Type="Int32" Nullable="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductAddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BrandId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK_dbo_Products_dbo_Brands_BrandId" FromRole="Products" ToRole="Brands" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryId" FromRole="Products" ToRole="Categories" />
+  </EntityType>
+  <Association Name="FK_dbo_Products_dbo_Brands_BrandId">
+    <End Role="Brands" Type="Self.Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="BrandId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Products_dbo_Categories_CategoryId">
+    <End Role="Categories" Type="Self.Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SopraDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK_dbo_Products_dbo_Brands_BrandId" Association="Self.FK_dbo_Products_dbo_Brands_BrandId">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Products_dbo_Categories_CategoryId" Association="Self.FK_dbo_Products_dbo_Categories_CategoryId">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <EntitySet Name="users" EntityType="SopraDBModel.user" />
+  </EntityContainer>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

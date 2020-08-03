@@ -1,0 +1,32 @@
+﻿#topnavbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+    #topnavbar li.topnavbarlist {
+        float: left;
+    }
+
+
+        #topnavbar li.topnavbarlist a {
+            margin-left: 15px;
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 4px solid #fff;
+        }
+
+        #topnavbar li.topnavbarlist:first-child {
+            margin-left: 50px;
+        }
+
+        #topnavbar li.topnavbarlist a:hover:not(.active) {
+            color: orangered;
+            text-decoration: none;
+            border-bottom: 4px solid orangered;
+        }
